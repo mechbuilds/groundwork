@@ -2,8 +2,7 @@
 
 A full-stack personal productivity app for property owners to log daily work, track expenses, and review monthly reports. Built for real personal use — not a tutorial clone.
 
-![Groundwork Dashboard](client/public/dashboard.png)
-
+![Groundwork Dashboard](https://raw.githubusercontent.com/mechbuilds/groundwork/main/client/public/dashboard.png)
 ---
 
 ## Why I Built This
