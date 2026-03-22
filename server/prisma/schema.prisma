@@ -1,0 +1,59 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String     @id @default(uuid())
+  email        String     @unique
+  password     String
+  fullName     String
+  propertyName String     @default("My Property")
+  createdAt    DateTime   @default(now())
+  entries      LogEntry[]
+  expenses     Expense[]
+  categories   Category[]
+}
+
+model LogEntry {
+  id            String     @id @default(uuid())
+  userId        String
+  user          User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  entryDate     DateTime
+  title         String
+  description   String
+  category      String
+  durationHours Float      @default(0)
+  photoUrls     String[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  expenses      Expense[]
+}
+
+model Expense {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  logEntryId  String?
+  logEntry    LogEntry? @relation(fields: [logEntryId], references: [id])
+  expenseDate DateTime
+  description String
+  amount      Float
+  category    String
+  receiptUrl  String?
+  createdAt   DateTime  @default(now())
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  color     String
+  icon      String
+  type      String
+  createdAt DateTime @default(now())
+}
