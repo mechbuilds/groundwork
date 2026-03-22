@@ -2,7 +2,7 @@
 
 A full-stack personal productivity app for property owners to log daily work, track expenses, and review monthly reports. Built for real personal use — not a tutorial clone.
 
-![Groundwork Dashboard](![Groundwork Dashboard](./client/public/dashboard.png))
+![Groundwork Dashboard](./client/public/dashboard.png)
 
 ---
 
@@ -194,4 +194,4 @@ Custom dark theme built with Tailwind CSS:
 
 Built by **mechbuilds** — a Computer Science graduate building real tools for real problems.
 
-- GitHub: [@yourusername](https://github.com/mechbuilds)
+- GitHub: [@mechbuilds](https://github.com/mechbuilds)
